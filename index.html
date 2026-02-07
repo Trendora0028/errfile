@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>確認中…</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .box {
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="content">
+    <h2>確認しています…</h2>
+    <p>ファイルをダウンロード中…</p>
+    <p id="status">0%</p>
+  </div>
+
+  <script>
+    let progress = 0;
+    const status = document.getElementById('status');
+
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 15) + 5;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+
+        // ダウンロード実行
+        fakeDownload();
+
+        // 完了後に真っ白にする（1秒後）
+        setTimeout(() => {
+          document.body.innerHTML = "";
+          document.body.style.background = "#fff";
+        }, 1000);
+
+      } else {
+        status.textContent = progress + '%';
+      }
+    }, 500);
+
+    function fakeDownload() {
+      const content = "This is a demo file.\n";
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "security_report.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
