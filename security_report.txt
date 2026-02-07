@@ -1,0 +1,33 @@
+SECURITY ALERT — UNAUTHORIZED ACCESS LOG
+
+A remote session was initiated from an unrecognized device.
+Multiple system components were accessed without authorization.
+
+The following activity was detected:
+
+• Apple ID authentication token requested and partially retrieved
+• iCloud backup files enumerated
+• Contacts, photos, and messages scanned for sensitive data
+• Location history accessed and transmitted
+• Screen capture process initiated in the background
+• Microphone and camera access requested (denied)
+
+This file was created automatically by the intrusion monitoring system to record the incident.
+
+If you are reading this, your device may already be compromised.
+
+Do not attempt to close this file. Do not restart your device.  
+Do not open any apps or enter any passwords until you have confirmed the security status of your account.
+
+A second session may begin at any moment.  
+If the intruder detects interruption, the system will attempt to hide its presence by overwriting logs and deleting evidence.
+
+This is a warning.
+
+If you believe this is a false alarm, DO NOT ignore it.  
+Verify your Apple ID from a trusted device immediately.
+
+ERROR CODE: 0xFA11ED00
+Incident ID: 7f4b-9c1a-2d0e-3e9f
+
+END OF LOG.
